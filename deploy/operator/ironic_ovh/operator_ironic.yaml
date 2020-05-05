@@ -135,8 +135,10 @@ spec:
               name: ironic-data-volume
       volumes:
         - name: ironic-data-volume
-          emptyDir: {}
+          hostPath:
+            path: /home/centos/shared
+            type: Directory
         - name: ironic-python-code
           hostPath:
-            path: /home/ubuntu/ironic/ironic
+            path: /home/centos/ironic/ironic
             type: Directory
